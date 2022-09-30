@@ -1,0 +1,180 @@
+/* Reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure,
+hr,
+a,
+blockquote {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+/* Variables */
+
+:root {
+  --dark-blue-clr: hsl(240, 38%, 20%);
+  --grayish-blue-clr: hsl(240, 18%, 77%);
+  --fs: 2rem;
+  --primary-ff: "Inter", sans-serif;
+}
+
+/* Body */
+
+body {
+  font-family: var(--primary-ff);
+  font-size: var(--fs);
+  background: url(../img/pattern-curve.svg) no-repeat bottom left;
+}
+
+/* Main */
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.text-slider,
+.image-slider {
+  display: flex;
+  align-items: center;
+}
+
+.col-12:first-child {
+  translate: 20%;
+  z-index: 1;
+}
+
+article,
+figure {
+  flex: 1 0 100%;
+}
+
+.text {
+  color: var(--dark-blue-clr);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-size: var(--fs);
+  font-weight: 700;
+  color: var(--dark-blue-clr);
+  margin-right: 1.5rem;
+}
+
+.text-gray {
+  color: var(--grayish-blue-clr);
+  font-weight: 300;
+}
+
+figure img {
+  border-radius: 10px;
+}
+
+.quotation-marks-bg {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 100%;
+  height: 100%;
+  background: url(../img/pattern-quotes.svg) no-repeat top left;
+}
+
+.bg-image {
+  position: absolute;
+  left: -20%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  background: url(../img/pattern-bg.svg) no-repeat top left/ 100% 100%;
+  z-index: -1;
+}
+
+.slider-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  translate: -50% 50%;
+  background-color: white;
+  border-radius: 100vh;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider-btn {
+  padding: 0 1rem;
+}
+
+/* Media Queries */
+
+@media all and (max-width: 992px) {
+  body {
+    background: url(../img/pattern-curve.svg) no-repeat bottom left/100%;
+  }
+
+  main {
+    margin: 3rem 0;
+  }
+
+  .col-12:first-child {
+    translate: 0;
+  }
+
+  .col-12:last-child {
+    margin-bottom: 70px;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .name {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .quotation-marks-bg {
+    left: 0;
+    background-position: top center;
+  }
+
+  .bg-image {
+    left: 0;
+    width: 100%;
+  }
+
+  figure {
+    text-align: center;
+  }
+
+  .slider-buttons {
+    left: 50%;
+  }
+}
